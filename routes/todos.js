@@ -1,14 +1,14 @@
 const { Router } = require('express')
-const router = Router()
 const Todo = require('../modules/ToDo')
+const router = Router()
 
 router.get('/', async (req, res) => {
-    const Todos = await Todo.find({})
+    const todos = await Todo.find({})
     
     res.render('index', {
         title: 'Todos list',
         isIndex: true,
-        Todos
+        todos
     })
 })
 
